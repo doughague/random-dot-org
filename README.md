@@ -2,9 +2,10 @@
 This package includes tools for downloading data from [random.org](https://random.org).
 
 # Dependencies
-0) standard c/c++ libraries and GNU-getopt (getopt.h)
-1) libCURL <http://curl.haxx.se/>
-2) Doxygen for making API documentation
+* standard C/C++ libraries
+* [GNU-getopt](https://www.gnu.org/software/libc/manual/html_node/Getopt.html)
+* [libCURL](http://curl.haxx.se/) 
+* [Doxygen](http://www.stack.nl/~dimitri/doxygen/) for making API documentation
 
 # Installation
 0) edit Makefile
@@ -16,7 +17,7 @@ This package includes tools for downloading data from [random.org](https://rando
 3) random-dot-org/bin/random-dot-org --help
    (to view options of main executable)
 
-# Copyright
+# License
 libRdO for downloading data from random.org
 Copyright (C) 2012 Doug Hague
 
