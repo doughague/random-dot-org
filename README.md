@@ -23,7 +23,7 @@ See comments there:
 * use clang++ or gcc for compilation
 * 32- or 64-bit archetecture supported
 
-Then:
+Compile:
 
     $ make
 
@@ -31,9 +31,14 @@ If you have Doxygen:
 
     $ make doc
 
+Optionally, you can soft-link the binary to a globally accessable bin:
+
+	$ sudo ln -s [random-dot-org install location]/bin/random-dot-org /usr/bin/random-dot-org
+
 View options of main executable:
 
-    $ random-dot-org/bin/random-dot-org --help
+	$ cd [random-dot-org install location]
+    $ ./bin/random-dot-org --help
 
 # License
 GPLv3
