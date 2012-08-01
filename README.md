@@ -1,6 +1,15 @@
 # C++ Library and Client for random.org
 This package includes tools for downloading data from [random.org](https://random.org).
 
+# Features
+You can access the typical random.org API (quota, integers, sequences and strings) along 
+with some derived extras (fractions and bytes).
+
+SSL (HTTPS) is used by default but can be disabled. 
+
+One can also use a proxy and proxy-type; for example, 127.0.0.1:9050 and SOCKS4a to use the 
+default [Vidalia-Tor](https://www.torproject.org/projects/vidalia) proxy:port configuration.
+
 # Dependencies
 * standard C/C++ libraries
 * [GNU getopt](https://www.gnu.org/software/libc/manual/html_node/Getopt.html)
@@ -10,11 +19,11 @@ This package includes tools for downloading data from [random.org](https://rando
 # Installation
 Edit the Makefile. See comments there: clang++ or gcc and 32- or 64-bit archetecture.
 
-Then, 
+Then:
 
     $ make
 
-If you have Doxygen
+If you have Doxygen:
 
     $ make doc
 
