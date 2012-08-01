@@ -4,22 +4,23 @@ This package includes tools for downloading data from [random.org](https://rando
 # Dependencies
 * standard C/C++ libraries
 * [GNU getopt](https://www.gnu.org/software/libc/manual/html_node/Getopt.html)
-* [libCURL](http://curl.haxx.se/) 
+* [libCURL](http://curl.haxx.se/) with curl-config
 * [Doxygen](http://www.stack.nl/~dimitri/doxygen/) for making API documentation
 
 # Installation
-Edit the Makefile. See comments there: clang++ or gcc and 32 or 64 bit archetecture.
+Edit the Makefile. See comments there: clang++ or gcc and 32- or 64-bit archetecture.
 
-Then 
+Then, 
 
     $ make
 
-(requires libCURL and curl-config)
+If you have Doxygen
 
-2) > make doc
-   (requires Doxygen)
-3) random-dot-org/bin/random-dot-org --help
-   (to view options of main executable)
+    $ make doc
+
+View options of main executable:
+
+    $ random-dot-org/bin/random-dot-org --help
 
 # License
 libRdO for downloading data from random.org
