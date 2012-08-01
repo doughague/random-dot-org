@@ -1,0 +1,29 @@
+
+BUNDLENAME = $(LIBNAME)-v$(VERSION).tgz
+BDIRNAME = $(LIBNAME)-v$(VERSION)
+
+tar: 
+	@echo "Bundling "$(LIBNAME)" into "$(BUNDLENAME)" (gzipped-tar-ball) ... "
+	@mkdir -p $(BDIRNAME)
+	@cp Makefile $(README) $(BDIRNAME)
+
+	@mkdir -p $(BDIRNAME)/makefiles
+	@cp makefiles/* $(BDIRNAME)/makefiles/
+
+	@mkdir -p $(BDIRNAME)/$(INCDIR)
+	@cp $(INCDIR)/*.$(HeadSuf) $(BDIRNAME)/$(INCDIR)
+
+	@mkdir -p $(BDIRNAME)/$(SRCDIR)
+	@cp $(SRCDIR)/*.$(SrcSuf) $(BDIRNAME)/$(SRCDIR)
+
+	@mkdir -p $(BDIRNAME)/$(SCRIPTDIR)
+	@cp $(SCRIPTDIR)/*.$(ScriptSuf) $(BDIRNAME)/$(SCRIPTDIR)
+
+	@-if [ -f $(DOXYFILE) ]; then mkdir $(BDIRNAME)/$(DOCDIR); cp $(DOXYFILE) $(BDIRNAME)/$(DOXYFILE); fi;
+	@-if [ -d $(DOCDIR)/html ]; then mkdir $(BDIRNAME)/$(DOCDIR)/html; cp -R $(DOCDIR)/html/* $(BDIRNAME)/$(DOCDIR)/html/; fi;
+
+	@tar -czvf $(BUNDLENAME) $(BDIRNAME)
+	@chmod u+x $(BUNDLENAME)
+	@rm -r $(BDIRNAME)/*
+	@rmdir $(BDIRNAME)
+	@echo "Done"

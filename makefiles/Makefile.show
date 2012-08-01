@@ -1,0 +1,19 @@
+show:
+	@echo "Flags :: "
+	@echo CXX        = $(CXX)
+	@echo CXXFLAGS   = $(CXXFLAGS)
+	@echo COMPILE.cc = $(COMPILE.cc)
+	@echo CXXFLAGS   = $(CXXFLAGS)
+	@echo ROOTCFLAGS = $(ROOTCFLAGS)
+	@echo LD         = $(LD) 
+	@echo SOFLAGS    = $(SOFLAGS)
+	@echo LDFLAGS    = $(LDFLAGS)
+	@echo LIBS       = $(LIBS)
+	@echo "Directories :: "
+	@echo INCDIR     = $(INCDIR)
+	@echo LIBDIR     = $(LIBDIR)
+	@echo "Objects :: "
+	@echo HEADERS    = $(HEADERS)
+	@echo SOURCES    = $(SOURCES)
+	@echo OBJECTS    = $(OBJECTS)
+	@echo PROGOBJS   = $(PROGOBJS)

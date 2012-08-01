@@ -1,0 +1,7 @@
+#README = README
+readme:
+	@-if [ ! -f README ]; \
+	then echo "*** Creating "README; \
+		touch README; \
+		echo "Help for "$(LIBNAME)" ... " >> README; \
+	fi;

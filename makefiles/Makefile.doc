@@ -1,0 +1,49 @@
+# If no mainpage is set up manually, it is provided automatically.
+ifeq ($(MAINPAGE),)
+MAINPAGE = $(SRCDIR)/mainpage.$(SrcSuf)
+endif
+# If no author is set up manually, it is provided automatically.
+ifeq ($(AUTHOR),)
+AUTHOR = $(shell whoami)
+endif
+# If no date is set up manually, it is provided automatically.
+ifeq ($(DATE),)
+DATE = $(shell date +%d.%m.%Y)
+endif
+
+DOXYFILE = $(DOCDIR)/Doxyfile
+
+doc:
+	@-if [ ! -d $(DOCDIR) ] && [ ! -h $(DOCDIR) ]; then mkdir $(DOCDIR); fi;
+	@-if [ ! -f $(DOXYFILE) ]; \
+		then echo "Generating doxygen config file ..."; \
+		doxygen -g $(DOXYFILE); \
+		echo "\n" >> $(DOXYFILE); \
+		echo "#---------------------------------------------------------------------------" >> $(DOXYFILE); \
+		echo "# Auto-added by Makefile.common " >> $(DOXYFILE); \
+		echo "#---------------------------------------------------------------------------" >> $(DOXYFILE); \
+		echo "PROJECT_NAME           = "$(LIBNAME) >> $(DOXYFILE); \
+		echo "PROJECT_NUMBER         = "$(VERSION) >> $(DOXYFILE); \
+		echo "OUTPUT_DIRECTORY       = "$(DOCDIR) >> $(DOXYFILE); \
+		echo "INPUT                  = "$(INCDIR)" "$(SRCDIR)" "$(SCRIPTDIR) >> $(DOXYFILE); \
+		echo "FILE_PATTERNS          = *."$(HeadSuf)" *."$(SrcSuf)" *."$(ScriptSuf) >> $(DOXYFILE); \
+		echo "GENERATE_LATEX         = NO" >> $(DOXYFILE); \
+		echo "EXTRACT_ALL            = YES" >> $(DOXYFILE); \
+		echo "SOURCE_BROWSER         = YES" >> $(DOXYFILE); \
+	fi;
+	@-if [ ! -f $(MAINPAGE) ]; \
+		then touch $(MAINPAGE); \
+		echo "/** \\\file "$(MAINPAGE) >> $(MAINPAGE); \
+		echo "    \\\brief Documentation overview." >> $(MAINPAGE); \
+		echo "*/" >> $(MAINPAGE); \
+		echo "/*! \mainpage" >> $(MAINPAGE); \
+		echo "  \\\author "$(AUTHOR) >> $(MAINPAGE); \
+		echo "  \date "$(DATE) >> $(MAINPAGE); \
+		echo "\n" >> $(MAINPAGE); \
+		echo "  \section Overview" >> $(MAINPAGE); \
+		echo "  This package includes tools for ..." >> $(MAINPAGE); \
+		echo "*/" >> $(MAINPAGE); \
+	fi;
+	@echo "Generating doxygen documentation ..."
+	@doxygen $(DOXYFILE)
+	@echo "Done"

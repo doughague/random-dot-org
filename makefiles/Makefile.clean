@@ -1,0 +1,5 @@
+clean:
+	@echo "*** Deleting libraries, executables and associated objects."
+	@/bin/rm -f $(OUTDIR)/*.$(ObjSuf) $(DICTHEAD) $(DICTSRC)
+	@/bin/rm -f $(LIBSO) 
+	@/bin/rm -f $(BINDIR)/*

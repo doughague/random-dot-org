@@ -1,0 +1,7 @@
+dirs:
+	@-if [ ! -d $(INCDIR) ] && [ ! -h $(INCDIR) ]; then  mkdir $(INCDIR); fi;
+	@-if [ ! -d $(SRCDIR) ] && [ ! -h $(SRCDIR) ]; then  mkdir $(SRCDIR); fi;
+	@-if [ ! -d $(OUTDIR) ] && [ ! -h $(OUTDIR) ]; then  mkdir $(OUTDIR); fi;
+	@-if [ ! -d $(LIBDIR) ] && [ ! -h $(LIBDIR) ]; then  mkdir $(LIBDIR); fi;
+	@-if [ ! -d $(BINDIR) ] && [ ! -h $(BINDIR) ]; then  mkdir $(BINDIR); fi;
+	@-if [ ! -d $(SCRIPTDIR) ] && [ ! -h $(SCRIPTDIR) ]; then  mkdir $(SCRIPTDIR); fi;
