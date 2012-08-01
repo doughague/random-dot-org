@@ -257,7 +257,6 @@ bool RdoAbsObject::downloadToFile()
   fclose(fp);
 
   // perform checks
-  // return failed
   if(checkCURLcode(res)) return true;
   else if(checkHTTPcode()) return true;
   //else if(checkBytesDnld()) return true;
