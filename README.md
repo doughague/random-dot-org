@@ -36,6 +36,8 @@ View options of main executable:
     $ random-dot-org/bin/random-dot-org --help
 
 # License
+GPLv3
+
 libRdO for downloading data from random.org
 Copyright (C) 2012 Doug Hague
 
