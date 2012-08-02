@@ -27,7 +27,7 @@ Compile:
 
     $ make
 
-If you have Doxygen:
+If you have [Doxygen](http://www.stack.nl/~dimitri/doxygen/):
 
     $ make doc
 
@@ -36,7 +36,7 @@ View options of main executable:
     $ ./bin/random-dot-org --help
 
 Optionally, you can soft-link the binary to a globally accessable bin 
-(edit Makefile to modify install diretory):
+(default is '/usr/bin', edit the Makefile to modify install diretory):
 
 	$ make install
 
