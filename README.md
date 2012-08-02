@@ -1,5 +1,5 @@
 # C++ Library and Client for [random.org](https://www.random.org)
-This package includes **GPLv3** licensed **GNU/Linux** [libCURL](http://curl.haxx.se/)-based
+This package includes **LGPLv3** licensed **GNU/Linux** [libCURL](http://curl.haxx.se/)-based
 tools for downloading data from **[random.org](https://www.random.org)**.
 
 ## Features
@@ -64,7 +64,7 @@ Please consider helping with this project. Some things to do include:
 * A GUI would be awesome.
 
 # License
-**[GPLv3](https://www.gnu.org/licenses/gpl.html)**
+**[LGPLv3](http://opensource.org/licenses/lgpl-3.0.html)**
 
 libRdO for downloading data from random.org
 Copyright (C) 2012 Doug Hague
