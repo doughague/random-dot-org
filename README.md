@@ -1,24 +1,28 @@
 # C++ Library and Client for [random.org](https://www.random.org)
-This package includes **GPLv3** licensed **GNU/Linux** tools for downloading data from 
-**[random.org](https://www.random.org)**.
+This package includes **GPLv3** licensed **GNU/Linux** [libCURL](http://curl.haxx.se/)-based
+ools for downloading data from **[random.org](https://www.random.org)**.
 
 ## Features
-* **Versitale**: You can access the typical [random.org](https://www.random.org) API (quota, integers, sequences and strings) 
-  along with some derived extras (fractions bytes and binary).
-* **Standard**: Uses [libCURL](http://curl.haxx.se/) library to conect to 
+* **Versitale**: You can access the typical [random.org](https://www.random.org) 
+  API (quota, integers, sequences and strings) along with some derived extras 
+  (fractions bytes and binary).
+* **Standard**: Uses [libCURL](http://curl.haxx.se/) library to connect to 
   [random.org](https://www.random.org) and download data.
 * **Secure**: HTTPS is used by default (disabled with `--not-secure` run-time option).
-* One can specify a proxy and proxy-type at run-time. 
+* **Anonymizable**: Agent and proxy can be set at run-time: 
     * I.e., `--proxy 127.0.0.1:9050 --proxy-type SOCKS4a` will use the default 
 	[Vidalia-Tor](https://www.torproject.org/projects/vidalia) proxy:port configuration.
-    <!-- * To `std::cout` (default) -->
-	<!-- * Appended to specified output file, i.e. `-o data.txt --append` -->
-	<!-- * In-memory c++ classes (API) for use in other programs. -->
+	* I.e., `--agent me@me.org` will identify the user-agent as "me@me.org" to 
+	[random.org](https://www.random.org).
 * There are examples included for using the API of this software: 
     * [example-api-fake-key](https://github.com/doughague/random-dot-org/blob/master/src/example-api-fake-key.cxx) 
 	will print ASCII characters that look somewhat like a GPG public key.
     * [example-api-powerlaw](https://github.com/doughague/random-dot-org/blob/master/src/example-api-powerlaw.cxx)
 	shows how to download and generate power-law distributed random numbers and estimate the power-law index.
+
+<!-- * To `std::cout` (default) -->
+<!-- * Appended to specified output file, i.e. `-o data.txt --append` -->
+<!-- * In-memory c++ classes (API) for use in other programs. -->
 
 ## Dependencies
 * Standard C/C++ libraries with [GNU getopt](https://www.gnu.org/software/libc/manual/html_node/Getopt.html)
