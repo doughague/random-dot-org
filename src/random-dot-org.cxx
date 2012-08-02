@@ -31,8 +31,8 @@
 #include "RdoOptions.hh"
 
 // methods
-void PrintUsage(std::ostream& os);
 int DownloadBinary(RdoOptions& opt);
+void PrintUsage(std::ostream& os);
 
 //_____________________________________________________________________________
 //! random-dot-org binary executable main method
@@ -149,6 +149,65 @@ int main(int argc, char** argv)
 }
 
 //_____________________________________________________________________________
+//! download and output binary data
+int DownloadBinary(RdoOptions& opt)
+{
+  // --------------------------------------------
+  // create/set the object
+  RdoBytes rdo;
+  // set the general settings
+  rdo.setHttps(opt.useHTTPS);
+  rdo.setAgent(opt.agent.c_str());
+  rdo.setProxy(opt.proxy.c_str());
+  rdo.setProxyType(opt.proxyType.c_str());
+  rdo.setTimeOut(opt.timeout);
+  rdo.setInMemory(true);
+
+  // specific settings
+  // Note: num interpreted as bits!!
+  unsigned int nBytes = (unsigned int)(opt.num/8.);
+  if(opt.num % 8) nBytes += 1;
+  rdo.setNum(nBytes);
+  rdo.setBase("2");
+  rdo.setColumns(1);
+
+  // --------------------------------------------
+  // get the random data
+  bool failed = rdo.downloadData();
+  if(failed){
+    std::cerr << "random-dot-org: Failed to download " << opt.type.c_str() << " data" << std::endl;
+    return -1;
+  }
+  std::vector<unsigned int> data = rdo.cache();
+
+  // --------------------------------------------
+  // stream
+  std::ofstream ofs;
+  bool toFile = (opt.outFile!="");
+  if(toFile){
+    if(opt.append) ofs.open(opt.outFile.c_str(), std::ios_base::out | std::ios_base::binary | std::ios_base::app);
+    else           ofs.open(opt.outFile.c_str(), std::ios_base::out | std::ios_base::binary);
+    if(!ofs.is_open()){
+      std::cerr << "random-dot-org: Failed to open file " << opt.outFile.c_str() << std::endl;
+      return -1;      
+    }
+  }
+
+  // --------------------------------------------
+  // write binary data
+  for(unsigned int k=0; k<data.size(); k++){
+    char c = static_cast<char>(data[k]);
+    if(toFile) ofs << c;
+    else std::cout << c;
+  }
+
+  // close file
+  if(toFile) ofs.close();
+  // return
+  return 0;
+}
+
+//_____________________________________________________________________________
 //! print random-dot-org usage to stream
 void PrintUsage(std::ostream& os)
 {
@@ -242,69 +301,4 @@ void PrintUsage(std::ostream& os)
   os << "                                    rounded up to nearest byte to download; [1,8e4]" << std::endl;
   os << "Example: random-dot-org binary" << std::endl;
   os << "         Will write 10 bits (rounded up to 2 bytes) to default file named random.bin." << std::endl;
-}
-
-
-//_____________________________________________________________________________
-//! download and output binary data
-int DownloadBinary(RdoOptions& opt)
-{
-  // --------------------------------------------
-  // create/set the object
-  RdoBytes rdo;
-  // set the general settings
-  rdo.setHttps(opt.useHTTPS);
-  rdo.setAgent(opt.agent.c_str());
-  rdo.setProxy(opt.proxy.c_str());
-  rdo.setProxyType(opt.proxyType.c_str());
-  rdo.setTimeOut(opt.timeout);
-  rdo.setInMemory(true);
-
-  // specific settings
-  // Note: num interpreted as bits!!
-  unsigned int nBytes = (unsigned int)(opt.num/8.);
-  if(opt.num % 8) nBytes += 1;
-  rdo.setNum(nBytes);
-  rdo.setBase("2");
-  rdo.setColumns(1);
-
-  // --------------------------------------------
-  // get the random data
-  bool failed = rdo.downloadData();
-  if(failed){
-    std::cerr << "random-dot-org: Failed to download " << opt.type.c_str() << " data" << std::endl;
-    return -1;
-  }
-  std::vector<unsigned int> data = rdo.cache();
-  unsigned int dSize = data.size();
-
-  // --------------------------------------------
-  // we must output to file for binary format!
-  std::string fName = opt.outFile;
-  bool app = opt.append;
-  if(fName==""){
-    fName = "random.bin";
-    std::cerr << "random-dot-org: Appending to default file " << fName.c_str() << std::endl;
-    app = true;
-  }
-
-  // --------------------------------------------
-  // stream
-  std::ofstream ofs;
-  if(app) ofs.open(fName.c_str(), std::ios_base::out | std::ios_base::binary | std::ios_base::app);
-  else    ofs.open(fName.c_str(), std::ios_base::out | std::ios_base::binary);
-  if(!ofs.is_open()){
-    std::cerr << "random-dot-org: Failed to open file " << fName.c_str() << std::endl;
-    return -1;      
-  }
-
-  // --------------------------------------------
-  // write binary data
-  for(unsigned int k=0; k<dSize; k++)
-    ofs << static_cast<char>(data[k]);
-
-  // close file
-  ofs.close();
-  // return
-  return 0;
 }
