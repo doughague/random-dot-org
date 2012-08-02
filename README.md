@@ -3,16 +3,17 @@ This package includes **GPLv3** licensed **GNU/Linux** tools for downloading dat
 **[random.org](https://www.random.org)**.
 
 ## Features
-* You can access the typical [random.org](https://www.random.org) API (quota, integers, sequences and strings) 
-  along with some derived extras (fractions and bytes).
-* Secure connection (HTTPS) is used by default but can be disabled at run-time with `--not-secure` option.
+* **Versitale**: You can access the typical [random.org](https://www.random.org) API (quota, integers, sequences and strings) 
+  along with some derived extras (fractions bytes and binary).
+* **Standard**: Uses [libCURL](http://curl.haxx.se/) library to conect to 
+  [random.org](https://www.random.org) and download data.
+* **Secure**: HTTPS is used by default (disabled with `--not-secure` run-time option).
 * One can specify a proxy and proxy-type at run-time. 
     * I.e., `--proxy 127.0.0.1:9050 --proxy-type SOCKS4a` will use the default 
 	[Vidalia-Tor](https://www.torproject.org/projects/vidalia) proxy:port configuration.
-* Uses `libCURL` to download data:
-    * To `std::cout` (default)
-	* Appended to specified output file, i.e. `-o data.txt --append`
-	* In-memory c++ classes (API) for use in other programs.
+    <!-- * To `std::cout` (default) -->
+	<!-- * Appended to specified output file, i.e. `-o data.txt --append` -->
+	<!-- * In-memory c++ classes (API) for use in other programs. -->
 * There are examples included for using the API of this software: 
     * [example-api-fake-key](https://github.com/doughague/random-dot-org/blob/master/src/example-api-fake-key.cxx) 
 	will print ASCII characters that look somewhat like a GPG public key.
