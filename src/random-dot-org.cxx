@@ -222,6 +222,7 @@ void PrintUsage(std::ostream& os)
   os << "  strings     download strings" << std::endl;
   os << "  fractions   download decimal fractions" << std::endl;
   os << "  bytes       download random bytes" << std::endl;
+  os << "  binary      download random bytes to binary format" << std::endl;
 
   // general options
   os << std::endl;
@@ -300,5 +301,5 @@ void PrintUsage(std::ostream& os)
   os << "  --number, -n       100            number of bits (NOT bytes!!)" << std::endl;
   os << "                                    rounded up to nearest byte to download; [1,8e4]" << std::endl;
   os << "Example: random-dot-org binary" << std::endl;
-  os << "         Will write 10 bits (rounded up to 2 bytes) to default file named random.bin." << std::endl;
+  os << "         Will write 16 bits in binary format to std::cout." << std::endl;
 }
