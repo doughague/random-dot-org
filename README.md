@@ -19,12 +19,12 @@ This package includes **GPLv3** licensed **GNU/Linux** tools for downloading dat
     * [example-api-powerlaw](https://github.com/doughague/random-dot-org/blob/master/src/example-api-powerlaw.cxx)
 	shows how to download and generate power-law distributed random numbers and estimate the power-law index.
 
-# Dependencies
+## Dependencies
 * Standard C/C++ libraries with [GNU getopt](https://www.gnu.org/software/libc/manual/html_node/Getopt.html)
 * [libCURL](http://curl.haxx.se/) with `curl-config`
 * [Doxygen](http://www.stack.nl/~dimitri/doxygen/) for making API documentation
 
-# Installation
+## Installation
 Optionally, you can edit the Makefile to change the following:
 * Use `clang++` or `gcc` for compilation (default is `clang++`).
 * Is 32-bit or 64-bit archetecture (default is 64-bit, i.e. `-m64` compiler flag)
