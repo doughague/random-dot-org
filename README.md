@@ -3,7 +3,7 @@ This package includes **LGPLv3** licensed **GNU/Linux** [libCURL](http://curl.ha
 tools for downloading data from **[random.org](https://www.random.org)**.
 
 ## Features
-* **Versitale**: You can access the typical [random.org](https://www.random.org) 
+* **Versatile**: You can access the typical [random.org](https://www.random.org) 
   API (quota, integers, sequences and strings) along with some derived extras 
   (fractions, bytes and binary) via the commandline executable `bin/random-dot-org` 
   or within your own program via libRdO API.
