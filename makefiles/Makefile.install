@@ -1,0 +1,16 @@
+#------------------- location --------------------------
+ifeq ($(INSTALLDIR),)
+INSTALLDIR = /usr/bin
+endif
+#-------------------------------------------------------
+
+#------------------- programs --------------------------
+ifeq ($(INSTALLPROGS),)
+INSTALLPROGS = $(PROGRAMS)
+endif
+#-------------------------------------------------------
+
+install: $(INSTALLPROGS)
+
+$(INSTALLPROGS): 
+	@sudo ln -s $(LOCAL)/$(BINDIR)/$@ $(INSTALLDIR)/$@
