@@ -18,10 +18,9 @@ default [Vidalia-Tor](https://www.torproject.org/projects/vidalia) proxy:port co
 * [Doxygen](http://www.stack.nl/~dimitri/doxygen/) for making API documentation
 
 # Installation
-First, edit the Makefile. 
-See comments there: 
-* use clang++ or gcc for compilation
-* 32- or 64-bit archetecture supported
+Optionally, you can edit the Makefile to change the following:
+* Use clang++ or gcc for compilation (default is clang++).
+* 32-bit or 64-bit archetecture supported (default is 64-bit)
 
 Compile:
 
