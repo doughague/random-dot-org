@@ -1,13 +1,13 @@
 # C++ Library and Client for [random.org](https://www.random.org)
-This package includes **GNU/Linux** tools for downloading data from [random.org](https://www.random.org).
+This package includes **GPLv3** licensed **GNU/Linux** tools for downloading data from **[random.org](https://www.random.org)**.
 
 # Features
 * You can access the typical [random.org](https://www.random.org) API (quota, integers, sequences and strings) along 
 with some derived extras (fractions and bytes).
-* SSL (HTTPS) is used by default but can be disabled. 
-* One can also use a proxy and proxy-type; for example, 127.0.0.1:9050 and SOCKS4a to use the 
-default [Vidalia-Tor](https://www.torproject.org/projects/vidalia) proxy:port configuration.
-* There are two examples included for using the API; 
+* Secure connection (HTTPS) is used by default but can be disabled at run-time with `--not-secure` option.
+* One can specify a proxy and proxy-type at run-time; for example, `--proxy 127.0.0.1:9050 --proxy-type SOCKS4a` 
+will use the default [Vidalia-Tor](https://www.torproject.org/projects/vidalia) proxy:port configuration.
+* There are examples included for using the API; 
 [example-api-fake-key](https://github.com/doughague/random-dot-org/blob/master/src/example-api-fake-key.cxx) and 
 [example-api-powerlaw](https://github.com/doughague/random-dot-org/blob/master/src/example-api-powerlaw.cxx)
 
