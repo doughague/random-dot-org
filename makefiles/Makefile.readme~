@@ -1,8 +1,0 @@
-README = README.txt
-
-readme:
-	@-if [ ! -f $(README) ]; \
-	then echo "*** Creating "$(README); \
-		touch $(README); \
-		echo "This software is designed to ... "$(README) >> $(README); \
-	fi;
