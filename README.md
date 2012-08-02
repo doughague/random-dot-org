@@ -1,18 +1,21 @@
 # C++ Library and Client for [random.org](https://www.random.org)
 This package includes **GPLv3** licensed **GNU/Linux** [libCURL](http://curl.haxx.se/)-based
-ools for downloading data from **[random.org](https://www.random.org)**.
+tools for downloading data from **[random.org](https://www.random.org)**.
 
 ## Features
 * **Versitale**: You can access the typical [random.org](https://www.random.org) 
   API (quota, integers, sequences and strings) along with some derived extras 
-  (fractions bytes and binary).
+  (fractions, bytes and binary).
 * **Standard**: Uses [libCURL](http://curl.haxx.se/) library to connect to 
-  [random.org](https://www.random.org) and download data.
+  [random.org](https://www.random.org) and download data. 
 * **Secure**: HTTPS is used by default (disabled with `--not-secure` run-time option).
 * **Anonymizable**: Agent and proxy can be set at run-time: 
     * I.e., `--proxy 127.0.0.1:9050 --proxy-type SOCKS4a` will use the default 
 	[Vidalia-Tor](https://www.torproject.org/projects/vidalia) proxy:port configuration.
-	* I.e., `--agent me@me.org` will identify the user-agent as "me@me.org" to 
+	See [here](https://trac.torproject.org/projects/tor/wiki/doc/TorFAQ#SOCKSAndDNS) for 
+	more information. (Note that the [Tor-Browser-Bundle](https://www.torproject.org/projects/torbrowser.html) 
+	uses a randomized port-number.)
+	* I.e., `--agent me@me.org` will identify the user-agent as `me@me.org` to 
 	[random.org](https://www.random.org).
 * There are examples included for using the API of this software: 
     * [example-api-fake-key](https://github.com/doughague/random-dot-org/blob/master/src/example-api-fake-key.cxx) 
