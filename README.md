@@ -2,16 +2,16 @@
 This package includes **GPLv3** licensed **GNU/Linux** tools for downloading data from 
 **[random.org](https://www.random.org)**.
 
-# Features
+## Features
 * You can access the typical [random.org](https://www.random.org) API (quota, integers, sequences and strings) 
   along with some derived extras (fractions and bytes).
 * Secure connection (HTTPS) is used by default but can be disabled at run-time with `--not-secure` option.
 * One can specify a proxy and proxy-type at run-time. 
-    * i.e., `--proxy 127.0.0.1:9050 --proxy-type SOCKS4a` will use the default 
+    * I.e., `--proxy 127.0.0.1:9050 --proxy-type SOCKS4a` will use the default 
 	[Vidalia-Tor](https://www.torproject.org/projects/vidalia) proxy:port configuration.
 * Uses `libCURL` to download data:
-    * to `std::cout` (default)
-	* appended to specified output file, i.e. `-o data.txt --append`
+    * To `std::cout` (default)
+	* Appended to specified output file, i.e. `-o data.txt --append`
 	* In-memory c++ classes (API) for use in other programs.
 * There are examples included for using the API of this software: 
     * [example-api-fake-key](https://github.com/doughague/random-dot-org/blob/master/src/example-api-fake-key.cxx) 
@@ -20,9 +20,8 @@ This package includes **GPLv3** licensed **GNU/Linux** tools for downloading dat
 	shows how to download and generate power-law distributed random numbers and estimate the power-law index.
 
 # Dependencies
+* Standard C/C++ libraries with [GNU getopt](https://www.gnu.org/software/libc/manual/html_node/Getopt.html)
 * [libCURL](http://curl.haxx.se/) with `curl-config`
-* Standard C/C++ libraries
-* [GNU getopt](https://www.gnu.org/software/libc/manual/html_node/Getopt.html)
 * [Doxygen](http://www.stack.nl/~dimitri/doxygen/) for making API documentation
 
 # Installation
@@ -49,7 +48,7 @@ Optionally, you can soft-link the binary to a globally accessable bin
 	$ make install
 
 # License
-GPLv3
+**GPLv3**
 
 libRdO for downloading data from random.org
 Copyright (C) 2012 Doug Hague
