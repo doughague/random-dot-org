@@ -1,5 +1,5 @@
 # C++ Library and Client for random.org
-This package includes tools for downloading data from [random.org](https://random.org).
+This package includes **GNU/Linux** tools for downloading data from [random.org](https://www.random.org).
 
 # Features
 * You can access the typical random.org API (quota, integers, sequences and strings) along 
@@ -12,15 +12,16 @@ default [Vidalia-Tor](https://www.torproject.org/projects/vidalia) proxy:port co
 [example-api-powerlaw](https://github.com/doughague/random-dot-org/blob/master/src/example-api-powerlaw.cxx)
 
 # Dependencies
-* standard C/C++ libraries
+* Standard C/C++ libraries
 * [GNU getopt](https://www.gnu.org/software/libc/manual/html_node/Getopt.html)
-* [libCURL](http://curl.haxx.se/) with curl-config
+* [libCURL](http://curl.haxx.se/) with `curl-config`
 * [Doxygen](http://www.stack.nl/~dimitri/doxygen/) for making API documentation
 
 # Installation
 Optionally, you can edit the Makefile to change the following:
-* Use clang++ or gcc for compilation (default is clang++).
-* 32-bit or 64-bit archetecture supported (default is 64-bit)
+* Use `clang++` or `gcc` for compilation (default is `clang++`).
+* Is 32-bit or 64-bit archetecture supported (default is 64-bit, i.e. `-m64` compiler flag)
+* Change the binary install (soft-link) directory (default is `/usr/bin/`)
 
 Compile:
 
