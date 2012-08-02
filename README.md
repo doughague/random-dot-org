@@ -18,16 +18,12 @@ tools for downloading data from **[random.org](https://www.random.org)**.
 	uses a randomized port-number.)
 	* I.e., `--agent me@me.org` will identify the user-agent as `me@me.org` to 
 	[random.org](https://www.random.org).
-* **API** You can use this library (headers/classes) in your own software. 
+* **API**: You can use this library (headers/classes) in your own software. 
  There are examples included for using the API of this software: 
     * [example-api-fake-key](https://github.com/doughague/random-dot-org/blob/master/src/example-api-fake-key.cxx) 
 	will print ASCII characters that look somewhat like a GPG public key.
     * [example-api-powerlaw](https://github.com/doughague/random-dot-org/blob/master/src/example-api-powerlaw.cxx)
 	shows how to download and generate power-law distributed random numbers and estimate the power-law index.
-
-<!-- * To `std::cout` (default) -->
-<!-- * Appended to specified output file, i.e. `-o data.txt --append` -->
-<!-- * In-memory c++ classes (API) for use in other programs. -->
 
 ## Dependencies
 * Standard C/C++ libraries with [GNU getopt](https://www.gnu.org/software/libc/manual/html_node/Getopt.html)
@@ -52,8 +48,8 @@ View options of main executable:
 
     $ ./bin/random-dot-org --help
 
-Optionally, you can soft-link the binary to a globally accessable bin 
-(default is `/usr/bin`, edit the Makefile to modify install diretory):
+Optionally, you can soft-link the binary to a globally accessable bin. 
+(The default is `/usr/bin`, and you can edit the Makefile to modify the install diretory):
 
 	$ make install
 
