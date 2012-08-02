@@ -76,7 +76,7 @@ void RdoBytes::buildUrl()
 }
 
 //_____________________________________________________________________________
-/** Get a random (as int) from memory. */
+/** Get a random byte (as int) from memory. */
 unsigned int RdoBytes::rndm()
 {
   unsigned int dsize = _randData.size();
