@@ -54,8 +54,9 @@ LIBSO    = $(LIBDIR)/lib$(LIBNAME).$(DllSuf)
 #-------------------------------------------------------
 
 #------------------------- flags -----------------------
-CXXFLAGS = -O2 -Wall -fPIC -pthread
-CCFLAGS  = -O2 -Wall -fPIC -pthread
+# -pthread
+CXXFLAGS = -O2 -Wall -fPIC
+CCFLAGS  = -O2 -Wall -fPIC
 LDFLAGS  = 
 SOFLAGS  = -fPIC -shared
 #-------------------------------------------------------
@@ -108,8 +109,8 @@ proginfo:
 	@echo "*** Compiling binary executables"
 $(OUTDIR)/%.$(ObjSuf): $(SRCDIR)/%.$(SrcSuf)
 	$(COMPILE.cc) $(INCLUDES) -o $@ $<
-$(BINDIR)/%: $(OUTDIR)/%.$(ObjSuf) $(LIBSO)
-	$(LD) $(LDFLAGS) -o $@ $^ $(LIBS) -L$(LIBDIR) -l$(LIBNAME)
+$(BINDIR)/%: $(OUTDIR)/%.$(ObjSuf) $(LOCAL)/$(LIBSO)
+	$(LD) $(LDFLAGS) -o $@ $^ $(LIBS) -L$(LOCAL)/$(LIBDIR) -l$(LIBNAME)
 #-------------------------------------------------------
 
 
