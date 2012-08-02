@@ -8,7 +8,8 @@ tools for downloading data from **[random.org](https://www.random.org)**.
   (fractions, bytes and binary).
 * **Standard**: Uses [libCURL](http://curl.haxx.se/) library to connect to 
   [random.org](https://www.random.org) and download data. 
-* **Secure**: HTTPS is used by default (disabled with `--not-secure` run-time option).
+* **Secure**: HTTPS is used by default (disabled with `--not-secure` run-time option). 
+  Also, attempts are made to clear (over-write) sensitive data on exit.
 * **Anonymizable**: Proxy and user-agent can be set at run-time: 
     * I.e., `--proxy 127.0.0.1:9050 --proxy-type SOCKS4a` will use the default 
 	[Vidalia-Tor](https://www.torproject.org/projects/vidalia) proxy:port-number configuration.
@@ -55,6 +56,15 @@ Optionally, you can soft-link the binary to a globally accessable bin
 (default is `/usr/bin`, edit the Makefile to modify install diretory):
 
 	$ make install
+
+# Contribute
+Please consider helping with this project. Some things to do include:
+* **Vet and debug code, especially any security issues!!**
+* Add `./configure` script for *nix portability.
+* Port to Windows and/or Mac OS.
+* Add support for internet connection username/password interface.
+* Add support for proxy connection username/password interface.
+* A GUI would be awesome.
 
 # License
 **[GPLv3](https://www.gnu.org/licenses/gpl.html)**
