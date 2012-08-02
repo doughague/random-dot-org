@@ -49,7 +49,7 @@ View options of main executable:
     $ ./bin/random-dot-org --help
 
 Optionally, you can soft-link the binary to a globally accessable bin. 
-(The default is `/usr/bin`, and you can edit the Makefile to modify the install diretory):
+(The default is `/usr/bin` and you can edit the Makefile to modify the install diretory):
 
 	$ make install
 
