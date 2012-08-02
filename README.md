@@ -35,9 +35,10 @@ View options of main executable:
 
     $ ./bin/random-dot-org --help
 
-Optionally, you can soft-link the binary to a globally accessable bin:
+Optionally, you can soft-link the binary to a globally accessable bin 
+(edit Makefile to modify install diretory):
 
-	$ sudo ln -s [random-dot-org install location]/bin/random-dot-org /usr/bin/random-dot-org
+	$ make install
 
 # License
 GPLv3
