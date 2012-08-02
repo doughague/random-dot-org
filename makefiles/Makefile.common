@@ -20,19 +20,21 @@ ifeq ($(VERSION),)
 VERSION = 0.1
 endif
 
-LOCAL = $(shell pwd)
+LOCAL  = $(shell pwd)
 SRCDIR = src
 INCDIR = include
 OUTDIR = out
 BINDIR = bin
 LIBDIR = lib
 DOCDIR = doc
+SPTDIR = scripts
 
-HeadSuf       = hh
-SrcSuf        = cxx
-ObjSuf        = o
-ExeSuf        =
-DllSuf        = so
+HeadSuf = hh
+SrcSuf  = cxx
+ObjSuf  = o
+ExeSuf  =
+DllSuf  = so
+SptSuf  = sh
 #-------------------------------------------------------
 
 #------------------- defs ------------------------------
@@ -83,7 +85,7 @@ LIBS     += $(shell curl-config --libs)
 #-------------------------------------------------------
 
 #------- targets ---------------------------------------
-.PHONY : clean dirs readme doc tar help helpmsg show
+.PHONY : clean dirs readme doc bundle help helpmsg show
 
 all : helpmsg dirs objs lib progs
 

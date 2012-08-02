@@ -4,3 +4,4 @@ dirs:
 	@-if [ ! -d $(OUTDIR) ] && [ ! -h $(OUTDIR) ]; then  mkdir $(OUTDIR); fi;
 	@-if [ ! -d $(LIBDIR) ] && [ ! -h $(LIBDIR) ]; then  mkdir $(LIBDIR); fi;
 	@-if [ ! -d $(BINDIR) ] && [ ! -h $(BINDIR) ]; then  mkdir $(BINDIR); fi;
+	@-if [ ! -d $(SCRIPTDIR) ] && [ ! -h $(SCRIPTDIR) ]; then  mkdir $(SCRIPTDIR); fi;

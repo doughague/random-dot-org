@@ -25,8 +25,8 @@ doc:
 		echo "PROJECT_NAME           = "$(LIBNAME) >> $(DOXYFILE); \
 		echo "PROJECT_NUMBER         = "$(VERSION) >> $(DOXYFILE); \
 		echo "OUTPUT_DIRECTORY       = "$(DOCDIR) >> $(DOXYFILE); \
-		echo "INPUT                  = "$(INCDIR)" "$(SRCDIR)" "$(SCRIPTDIR) >> $(DOXYFILE); \
-		echo "FILE_PATTERNS          = *."$(HeadSuf)" *."$(SrcSuf)" *."$(ScriptSuf) >> $(DOXYFILE); \
+		echo "INPUT                  = "$(INCDIR)" "$(SRCDIR)" "$(SPTDIR) >> $(DOXYFILE); \
+		echo "FILE_PATTERNS          = *."$(HeadSuf)" *."$(SrcSuf)" *."$(SptSuf) >> $(DOXYFILE); \
 		echo "GENERATE_LATEX         = NO" >> $(DOXYFILE); \
 		echo "EXTRACT_ALL            = YES" >> $(DOXYFILE); \
 		echo "SOURCE_BROWSER         = YES" >> $(DOXYFILE); \

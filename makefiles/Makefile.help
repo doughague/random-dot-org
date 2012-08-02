@@ -4,10 +4,9 @@ helpmsg:
 help:
 	@echo "=============================================================="
 	@echo "COMMON TARGETS:     FUNCTION:"
-	@echo "  make              - compile & link all libs & execs"
+	@echo "  make              - compile & link all libs & executables"
+	@echo "  make install      - soft-link executables to "$(INSTALLDIR)
 	@echo "  make clean        - delete all libs and execs"
-	@echo "  make rootlogon    - create scripts/rootlogon.C"
-	@echo "  make linkdef      - create a template inc/*LinkDef.hh"
 	@echo "  make doc          - generate doxygen documentation"
 	@echo "  make tar          - bundle this code into a gzipped-tarball"
 	@echo "  make show         - show the flags, and files used"
@@ -15,7 +14,6 @@ help:
 	@echo "OTHER TARGETS:      FUNCTION:"
 	@echo "  make dirs         - create directory structure"
 	@echo "  make objs         - compile object libraries"
-	@echo "  make dict         - create & complie ROOT dictionary"
 	@echo "  make lib          - link objs & create shared object library"
 	@echo "  make progs        - compile & link executables"
 	@echo "=============================================================="
