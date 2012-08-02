@@ -5,11 +5,12 @@ tools for downloading data from **[random.org](https://www.random.org)**.
 ## Features
 * **Versitale**: You can access the typical [random.org](https://www.random.org) 
   API (quota, integers, sequences and strings) along with some derived extras 
-  (fractions, bytes and binary).
+  (fractions, bytes and binary) via the commandline executable `bin/random-dot-org` 
+  or within your own program via libRdO API.
 * **Standard**: Uses [libCURL](http://curl.haxx.se/) library to connect to 
   [random.org](https://www.random.org) and download data. 
 * **Secure**: HTTPS is used by default (disabled with `--not-secure` run-time option). 
-  Also, attempts are made to clear (over-write) sensitive data on exit.
+  Also, attempts are made to clear (over-write) in-memory sensitive data on exit.
 * **Anonymizable**: Proxy and user-agent can be set at run-time: 
     * I.e., `--proxy 127.0.0.1:9050 --proxy-type SOCKS4a` will use the default 
 	[Vidalia-Tor](https://www.torproject.org/projects/vidalia) proxy:port-number configuration.
