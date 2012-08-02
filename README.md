@@ -17,7 +17,8 @@ tools for downloading data from **[random.org](https://www.random.org)**.
 	uses a randomized port-number.)
 	* I.e., `--agent me@me.org` will identify the user-agent as `me@me.org` to 
 	[random.org](https://www.random.org).
-* There are examples included for using the API of this software: 
+* **API** You can use this library (headers/classes) in your own software. 
+ There are examples included for using the API of this software: 
     * [example-api-fake-key](https://github.com/doughague/random-dot-org/blob/master/src/example-api-fake-key.cxx) 
 	will print ASCII characters that look somewhat like a GPG public key.
     * [example-api-powerlaw](https://github.com/doughague/random-dot-org/blob/master/src/example-api-powerlaw.cxx)
