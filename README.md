@@ -64,7 +64,7 @@ Please consider helping with this project. Some things to do include:
 * A GUI would be awesome.
 
 # License
-**[LGPLv3](http://opensource.org/licenses/lgpl-3.0.html)**
+**[LGPLv3](https://www.gnu.org/copyleft/lgpl)**
 
 libRdO for downloading data from random.org
 Copyright (C) 2012 Doug Hague
