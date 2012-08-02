@@ -9,10 +9,10 @@ tools for downloading data from **[random.org](https://www.random.org)**.
 * **Standard**: Uses [libCURL](http://curl.haxx.se/) library to connect to 
   [random.org](https://www.random.org) and download data. 
 * **Secure**: HTTPS is used by default (disabled with `--not-secure` run-time option).
-* **Anonymizable**: Agent and proxy can be set at run-time: 
+* **Anonymizable**: Proxy and user-agent can be set at run-time: 
     * I.e., `--proxy 127.0.0.1:9050 --proxy-type SOCKS4a` will use the default 
-	[Vidalia-Tor](https://www.torproject.org/projects/vidalia) proxy:port configuration.
-	See [here](https://trac.torproject.org/projects/tor/wiki/doc/TorFAQ#SOCKSAndDNS) for 
+	[Vidalia-Tor](https://www.torproject.org/projects/vidalia) proxy:port-number configuration.
+	See [TorFAQ](https://trac.torproject.org/projects/tor/wiki/doc/TorFAQ#SOCKSAndDNS) for 
 	more information. (Note that the [Tor-Browser-Bundle](https://www.torproject.org/projects/torbrowser.html) 
 	uses a randomized port-number.)
 	* I.e., `--agent me@me.org` will identify the user-agent as `me@me.org` to 
@@ -56,7 +56,7 @@ Optionally, you can soft-link the binary to a globally accessable bin
 	$ make install
 
 # License
-**GPLv3**
+**[GPLv3](https://www.gnu.org/licenses/gpl.html)**
 
 libRdO for downloading data from random.org
 Copyright (C) 2012 Doug Hague
