@@ -118,11 +118,11 @@ $(BINDIR)/%: $(OUTDIR)/%.$(ObjSuf) $(LOCAL)/$(LIBSO)
 
 #------- phony targets ---------------------------------
 include makefiles/Makefile.dirs
-include makefiles/Makefile.clean
+include makefiles/Makefile.install
 include makefiles/Makefile.readme
 include makefiles/Makefile.doc
 include makefiles/Makefile.bundle
+include makefiles/Makefile.clean
 include makefiles/Makefile.help
 include makefiles/Makefile.show
-# include makefiles/Makefile.install
 #-------------------------------------------------------

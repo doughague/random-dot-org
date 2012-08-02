@@ -1,6 +1,13 @@
-scratch/*
+# Directories
 out/*
-lib/*
 bin/*
+lib/*
+scratch/*
+
+# File Types
+*.so
+*.o
+
+# Backup files
 *~
 */*~
