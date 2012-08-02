@@ -1,8 +1,8 @@
-# C++ Library and Client for random.org
+# C++ Library and Client for [random.org](https://www.random.org)
 This package includes **GNU/Linux** tools for downloading data from [random.org](https://www.random.org).
 
 # Features
-* You can access the typical random.org API (quota, integers, sequences and strings) along 
+* You can access the typical [random.org](https://www.random.org) API (quota, integers, sequences and strings) along 
 with some derived extras (fractions and bytes).
 * SSL (HTTPS) is used by default but can be disabled. 
 * One can also use a proxy and proxy-type; for example, 127.0.0.1:9050 and SOCKS4a to use the 
@@ -12,15 +12,15 @@ default [Vidalia-Tor](https://www.torproject.org/projects/vidalia) proxy:port co
 [example-api-powerlaw](https://github.com/doughague/random-dot-org/blob/master/src/example-api-powerlaw.cxx)
 
 # Dependencies
+* [libCURL](http://curl.haxx.se/) with `curl-config`
 * Standard C/C++ libraries
 * [GNU getopt](https://www.gnu.org/software/libc/manual/html_node/Getopt.html)
-* [libCURL](http://curl.haxx.se/) with `curl-config`
 * [Doxygen](http://www.stack.nl/~dimitri/doxygen/) for making API documentation
 
 # Installation
 Optionally, you can edit the Makefile to change the following:
 * Use `clang++` or `gcc` for compilation (default is `clang++`).
-* Is 32-bit or 64-bit archetecture supported (default is 64-bit, i.e. `-m64` compiler flag)
+* Is 32-bit or 64-bit archetecture (default is 64-bit, i.e. `-m64` compiler flag)
 * Change the binary install (soft-link) directory (default is `/usr/bin/`)
 
 Compile:
@@ -36,7 +36,7 @@ View options of main executable:
     $ ./bin/random-dot-org --help
 
 Optionally, you can soft-link the binary to a globally accessable bin 
-(default is '/usr/bin', edit the Makefile to modify install diretory):
+(default is `/usr/bin`, edit the Makefile to modify install diretory):
 
 	$ make install
 
